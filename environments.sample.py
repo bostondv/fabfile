@@ -16,7 +16,7 @@ env.timestamp = now.strftime('%Y%m%dT%H%M%S')
 def dev():
 	env.user = 'dev_username_here'
 	env.hosts = ['dev_domain_name_here']
-	env.dir = '/home/pomelo/webenv.apps/%s' % (env.app)
+	env.dir = '/home/pomelo/webapps/%s' % (env.app)
 	env.dbname = 'dev_database_name_here'
 	env.dbuser = 'dev_database_username_here'
 	env.dbpass = 'dev_database_password_here'

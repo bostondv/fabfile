@@ -30,21 +30,21 @@ def setup():
 	run('git clone %s:%s.git %s' % (env.git, env.app, env.dir))
 	execute(wp.config)
 	execute(wp.htaccess)
-	execute(media.put)
-	execute(db.put)
+	execute(media.push)
+	execute(db.push)
 
 # Update local development from remote
 @task
-def get():
+def pull():
 	execute(git.commit_remote)
 	execute(git.push_remote)
 	execute(git.pull)
-	execute(media.get)
-	execute(db.get)
+	execute(media.pull)
+	execute(db.pull)
 
 # Deploy the website
 @task
-def put():
+def push():
 	with settings(warn_only=True):
 		if run('test -d %s/.git' % (env.dir)).failed:
 			if run('test -f %s/index.html' % (env.dir)).succeeded:

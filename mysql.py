@@ -33,7 +33,7 @@ def mysql_remote():
 
 # Database local --> remote
 @task
-def put():
+def push():
 	execute(dump_remote)
 	execute(dump)
 	local('tar czf ~/tmp/db.tgz %s' % (env.dbpath))
@@ -44,7 +44,7 @@ def put():
 
 # Database remote --> local
 @task
-def get():
+def Pull():
 	execute(dump_remote)
 	execute(dump)
 	with cd(env.dir):

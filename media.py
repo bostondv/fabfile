@@ -1,17 +1,17 @@
 from __future__ import with_statement
 from fabric.api import *
 
-# Put media local --> remote
+# Media local --> remote
 @task
-def put():
+def push():
 	local('tar czf ~/tmp/media.tgz %s' % (media_path))
 	put('~/tmp/media.tgz', '~/tmp/media.tgz')
 	with cd(env.dir):
 		run('tar xzf ~/tmp/media.tgz')
 
-# Get media remote --> local
+# Media remote --> local
 @task
-def get():
+def pull():
 	with cd(env.dir):
 		run('tar czf ~/tmp/media.tgz %s' % (media_path))
 		get('~/tmp/media.tgz', '~/tmp/media.tgz')
