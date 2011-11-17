@@ -4,7 +4,7 @@ from fabric.api import *
 # Media local --> remote
 @task
 def push():
-	local('tar czf ~/tmp/media.tgz %s' % (media_path))
+	local('tar czf ~/tmp/media.tgz %s' % (env.media))
 	put('~/tmp/media.tgz', '~/tmp/media.tgz')
 	with cd(env.dir):
 		run('tar xzf ~/tmp/media.tgz')
@@ -13,6 +13,6 @@ def push():
 @task
 def pull():
 	with cd(env.dir):
-		run('tar czf ~/tmp/media.tgz %s' % (media_path))
+		run('tar czf ~/tmp/media.tgz %s' % (env.media))
 		get('~/tmp/media.tgz', '~/tmp/media.tgz')
 		local('tar xzf ~/tmp/media.tgz')
