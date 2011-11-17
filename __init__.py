@@ -1,6 +1,5 @@
 from __future__ import with_statement
 from fabric.api import *
-import datetime
 
 # Environments
 from environments import *
@@ -10,17 +9,6 @@ import wp
 import mysql as db
 import git
 import media
-
-# Globals
-env.app = 'project_name_here'
-
-env.git = 'git@pomelodesign.com'
-env.media = 'wp-content/uploads'
-env.dbpath = '%s/db' % (env.media)
-env.dbfile = '%s/latest.sql.gz' % (env.dbpath)
-
-now = datetime.datetime.now()
-env.timestamp = now.strftime('%Y%m%dT%H%M%S')
 
 # Create tmp dirs
 @task
