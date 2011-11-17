@@ -44,7 +44,7 @@ def push():
 
 # Database remote --> local
 @task
-def Pull():
+def pull():
 	execute(dump_remote)
 	execute(dump)
 	with cd(env.dir):
