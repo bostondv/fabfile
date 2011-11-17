@@ -27,7 +27,7 @@ def dev():
 def prod():
 	env.user = 'prod_username_here'
 	env.hosts = ['prod_domain_name_here']
-	env.dir = '/path/to/website/%s' % (env.app)
+	env.dir = '/path/to/website'
 	env.dbname = 'prod_database_name_here'
 	env.dbuser = 'prod_database_username_here'
 	env.dbpass = 'prod_database_password_here'

@@ -19,7 +19,7 @@ def bootstrap():
 	run('mkdir -p ~/tmp')
 	local('mkdir -p ~/tmp')
 	local('mkdir -p %s' % (env.media))
-	run('db -p %s' % (env.dbpath))
+	run('mkdir -p %s' % (env.dbpath))
 
 # First run install - automatically triggered by 'deploy' if needed
 @task
