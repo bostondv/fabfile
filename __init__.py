@@ -25,10 +25,10 @@ def bootstrap():
 # First run install - automatically triggered by 'deploy' if needed
 @task
 def setup():
-	execute(bootstrap)
 	execute(git.commit)
 	execute(git.push)
 	run('git clone %s:%s.git %s' % (env.git, env.app, env.dir))
+	execute(bootstrap)
 	execute(wp.config)
 	execute(wp.htaccess)
 	execute(media.push)
