@@ -4,34 +4,42 @@ from fabric.api import *
 # Commit local repo
 @task
 def commit():
-	local('git add .')
-	local('git commit -a')
+	# TODO check if anything to commit
+	with settings(warn_only=True):
+		local('git add .')
+		local('git commit -a')
 
 # Push local repo
 @task
 def push():
-	local('git push')
+	with settings(warn_only=True):
+		local('git push')
 
 # Pull local repo
 @task
 def pull():
-	local('git pull')
+	with settings(warn_only=True):
+		local('git pull')
 
 # Commit remote repo
 @task
 def commit_remote():
-	with cd(env.dir):
-		run('git add .')
-		run('git commit -am "Update from remote server"')
+	# TODO check if anything to commit first
+	with settings(warn_only=True):
+		with cd(env.dir):
+			run('git add .')
+			run('git commit -am "Update from remote server"')
 
 # Push remote repo
 @task
 def push_remote():
-	with cd(env.dir):
-		run('git push')
+	with settings(warn_only=True):
+		with cd(env.dir):
+			run('git push')
 
 # Pull remote repo
 @task
 def pull_remote():
-	with cd(env.dir):
-		run('git pull')
+	with settings(warn_only=True):
+		with cd(env.dir):
+			run('git pull')
