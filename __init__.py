@@ -9,6 +9,7 @@ import wp
 import mysql as db
 import git
 import media
+import webfaction
 
 # Create tmp dirs
 @task

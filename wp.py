@@ -38,3 +38,8 @@ def htaccess():
 	htaccess_file.close()
 	with cd(env.dir):
 		put('~/tmp/htaccess-sample.txt', '.htaccess')
+
+# Fix WordPress db URL paths when moving servers
+@task
+def fix_urls():
+	pass
