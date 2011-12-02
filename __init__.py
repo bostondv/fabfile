@@ -38,6 +38,7 @@ def setup():
 @task
 def pull():
 	execute(git.commit_remote)
+	execute(git.pull_remote)
 	execute(git.push_remote)
 	execute(git.pull)
 	execute(media.pull)

@@ -13,6 +13,11 @@ def domain():
 def app():
 	create_app(env.app)
 
+# Create webfaction application
+@task
+def app_git():
+	create_app(env.app, apptype='git')
+
 # Create webfaction website
 @task
 def website():
@@ -47,11 +52,11 @@ def create_domain(host, app):
 		sys.exit(1)
 
 # Creates a static_php53 using webfaction API
-def create_app(app):
+def create_app(app, apptype='static_php53'):
 	server = xmlrpclib.ServerProxy('https://api.webfaction.com/')
 	session_id, account = server.login(env.user, env.password)
 	try:
-		response = server.create_app(session_id, app, 'static_php53', False, '')
+		response = server.create_app(session_id, app, apptype, False, '')
 		print "App on webfaction created: %s" % response
 		return response
 
