@@ -3,6 +3,7 @@ import datetime
 
 env.app = 'app_name_here' # 9 character max
 
+env.key_filename = ["/path/to/private/key"]
 env.git = 'git@pomelodesign.com'
 env.media = 'wp-content/uploads'
 env.dbpath = '%s/db' % (env.media)
@@ -16,7 +17,6 @@ env.timestamp = now.strftime('%Y%m%dT%H%M%S')
 def dev():
 	# Optimized settings for webfaction
 	env.user = 'dev_username_here'
-	env.password = 'dev_password_here'
 	env.hosts = ['pmlo.org']
 	env.ip = '174.121.79.186'
 	env.dir = '/home/%s/webapps/%s' % (env.user, env.app)
@@ -29,7 +29,6 @@ def dev():
 @task
 def prod():
 	env.user = 'prod_username_here'
-	env.password = 'prod_password_here'
 	env.hosts = ['prod_domain_name_here']
 	env.ip = 'prod_ip_here'
 	env.dir = '/path/to/website'
