@@ -13,13 +13,13 @@ def commit():
 @task
 def push():
 	with settings(warn_only=True):
-		local('git push')
+		local('git push origin master')
 
 # Pull local repo
 @task
 def pull():
 	with settings(warn_only=True):
-		local('git pull')
+		local('git pull origin master')
 
 # Commit remote repo
 @task
@@ -35,11 +35,11 @@ def commit_remote():
 def push_remote():
 	with settings(warn_only=True):
 		with cd(env.dir):
-			run('git push')
+			run('git push origin master')
 
 # Pull remote repo
 @task
 def pull_remote():
 	with settings(warn_only=True):
 		with cd(env.dir):
-			run('git pull')
+			run('git pull origin master')
