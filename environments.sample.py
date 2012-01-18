@@ -1,7 +1,7 @@
 from fabric.api import *
 import datetime
 
-env.app = 'app_name_here' # 9 character max
+env.app = 'app_name_here'
 env.git = 'git@pomelodesign.com:path/to/repo.git'
 env.media = 'wp-content/uploads'
 env.dbpath = '%s/db' % (env.media)
@@ -13,7 +13,6 @@ env.timestamp = now.strftime('%Y%m%dT%H%M%S')
 # Development server
 @task
 def dev():
-	# Optimized settings for webfaction
 	env.user = 'dev_username_here'
 	env.hosts = ['prod_domain_name_here']
 	env.dir = '/path/to/website'
