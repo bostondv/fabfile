@@ -16,9 +16,9 @@ def dev():
 	# Optimized settings for webfaction
 	env.user = 'dev_username_here'
 	env.hosts = ['prod_domain_name_here']
-	env.dir = '/path/to/website/%s' % (env.app)
-	env.dbname = '%s' % (env.app) 
-	env.dbuser = env.dbname # same as dbname
+	env.dir = '/path/to/website'
+	env.dbname = 'dev_database_name_here' 
+	env.dbuser = 'dev_database_username_here'
 	env.dbpass = 'dev_database_password_here'
 	env.dbhost = 'localhost'
 
