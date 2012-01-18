@@ -27,7 +27,7 @@ def bootstrap():
 def setup():
 	execute(git.commit)
 	execute(git.push)
-	run('git clone %s:%s.git %s' % (env.git, env.app, env.dir))
+	run('git clone %s %s' % (env.git, env.dir))
 	execute(bootstrap)
 	execute(wp.config)
 	execute(wp.htaccess)
