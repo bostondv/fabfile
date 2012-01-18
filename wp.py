@@ -33,7 +33,7 @@ def config():
 # Create .htaccess
 @task
 def htaccess():
-	htaccess_sample = urllib.urlopen('https://raw.github.com/bostondv/snippets/master/wordpress/.htaccess').read()
+	htaccess_sample = urllib.urlopen('https://raw.github.com/bostondv/snippets/master/wordpress/htaccess.txt').read()
 	htaccess_file = open('%s/tmp/htaccess-sample.txt' % os.environ['HOME'],'w')
 	htaccess_file.write(htaccess_sample)
 	htaccess_file.close()

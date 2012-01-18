@@ -2,7 +2,6 @@ from fabric.api import *
 import datetime
 
 env.app = 'app_name_here' # 9 character max
-env.key_filename = ["/path/to/private/key"] # path to private key
 env.git = 'git@pomelodesign.com'
 env.media = 'wp-content/uploads'
 env.dbpath = '%s/db' % (env.media)
