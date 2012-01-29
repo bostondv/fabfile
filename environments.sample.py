@@ -1,12 +1,13 @@
 from fabric.api import *
 import datetime
+import os
 
 env.app = 'app_name_here'
-env.git = 'git@pomelodesign.com:path/to/repo.git'
-env.media = 'wp-content/uploads'
-env.dbpath = '%s/db' % (env.media)
-env.dbfile = '%s/latest.sql.gz' % (env.dbpath)
-
+env.git = 'git@domain.com:path/to/repo.git'
+env.mediadir = 'wp-content/uploads'
+env.tmpdir = '~/tmp'
+env.dbfile = '%s/%s-latest.sql.gz' % (env.tmpdir, env.app)
+env.mediafile = '%s/%s-media.tar.gz' % (env.tmpdir, env.app)
 now = datetime.datetime.now()
 env.timestamp = now.strftime('%Y%m%dT%H%M%S')
 
